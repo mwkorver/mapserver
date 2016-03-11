@@ -5,7 +5,7 @@ The goal of this project is to simplify the instantiation of a WMS service able 
 This repo is based on srounet/docker-mapserver. I have swapped out Apache with Nginx, and taken out PHP. You could use the same general pattern to serve WFS by running this container on top of a number of PostgreSQL read-replicas running on Amazon RDS.
 Use this in combinatio with this EC2 user data script 
 
-    https://gist.github.com/mwkorver/1ef45abac3871360f2b1
+https://gist.github.com/mwkorver/1ef45abac3871360f2b1
 
 ## UMN Mapserver
 
