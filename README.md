@@ -20,7 +20,7 @@ Running this will build a docker image with mapserver 7
 
 ## Running mwkorver/mapserver
 
-This image expose two ports 22 for ssh and 80 for Mapserver
+This image exposes two ports 22 for ssh and 8080 for Nginx
 
     docker run -d -p 80:8080 -v /usr/local/mapserver:/maps --name mapserver mapserver
 
