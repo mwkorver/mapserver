@@ -21,8 +21,11 @@ Running this will build a docker image with mapserver 7
 
 This image expose two ports 22 for ssh and 80 for Mapserver
 
-    sudo docker run -d -p 80:8080 -v /usr/local/mapserver:/maps --name mapserver mapserver
+    docker run -d -p 80:8080 -v /usr/local/mapserver:/maps --name mapserver mapserver
 
 ## Test it
 
-http://HOST_IP:DOCKER_80_PORT/wms
+wget -qO- h http://HOST_IP/wms
+
+You should get something like this:
+No query information to decode. QUERY_STRING is set, but empty. 
