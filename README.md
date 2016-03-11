@@ -18,7 +18,7 @@ Running this will build a docker image with mapserver 7
     cd mapserver
     docker build -t mapserver .
 
-## Running docker-mapserver
+## Running mwkorver/mapserver
 
 This image expose two ports 22 for ssh and 80 for Mapserver
 
