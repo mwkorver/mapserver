@@ -1,0 +1,55 @@
+#!/bin/bash
+#RUN_USER may differ between www-data and nginx
+RUN_USER=www-data
+RUN_GROUP=www-data
+
+LISTEN_ADDRESS=127.0.0.1
+LISTEN_PORT=9999
+
+SPAWN_FCGI=/usr/bin/spawn-fcgi
+MAPSRV_CGI=/usr/lib/cgi-bin/mapserv
+PID_FILE=/var/run/fastcgi-mapsrv.pid
+
+PROC_NAME='MapServer FastCGI Daemon'
+
+d_start() {
+    if [ -f $PID_FILE ]; then
+      echo -n " already running"
+    else
+        start-stop-daemon --start -p $PID_FILE \
+            --exec /usr/bin/env -- $SPAWN_FCGI -f $MAPSRV_CGI \
+            -u $RUN_USER -g $RUN_GROUP -a $LISTEN_ADDRESS -p $LISTEN_PORT \
+            -P $PID_FILE
+    fi
+}
+
+d_stop() {
+    start-stop-daemon --stop --quiet --pidfile $PID_FILE \
+                      || echo -n " not running"
+    if [ -f $PID_FILE ]; then
+        rm $PID_FILE
+    fi
+}
+
+case "$1" in
+  start)
+    echo -n "Starting $PROC_NAME: $0 "
+    d_start
+    echo "."
+    ;;
+
+  stop)
+    echo -n "Stopping $PROC_NAME: $0 "
+    d_stop
+    echo "."
+    ;;
+  restart)
+    echo -n "Restarting $PROC_NAME: $0 "
+    d_stop
+    sleep 1
+    d_start
+    ;;
+  *)
+    echo "usage: $0 {start|stop|restart}"
+    ;;
+esac
