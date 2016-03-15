@@ -3,7 +3,7 @@
 This is UMN MapServer behind Nginx using FastCGI in a Docker container.
 The goal of this project is to simplify the instantiation of a WMS service able to serve a large collection of orthoimagery. 
 This repo is based on srounet/docker-mapserver. I have swapped out Apache with Nginx, and taken out PHP. You could use the same general pattern to serve WFS by running this container on top of a number of PostgreSQL read-replicas running on Amazon RDS.
-Use this in combination with this Amazon EC2 user data script that runs the container on an instance that uses yas3fs to mount USDA NAIP data on Amazon S3.
+Use this in combination with Amazon EC2 user data script below that runs the container on an instance that uses yas3fs to mount USDA NAIP data on Amazon S3.
 
 https://gist.github.com/mwkorver/1ef45abac3871360f2b1
 
