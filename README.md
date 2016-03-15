@@ -12,7 +12,7 @@ https://gist.github.com/mwkorver/1ef45abac3871360f2b1
 MapServer is an Open Source platform for publishing spatial data and interactive mapping applications to the web. Originally developed in the mid-1990’s at the University of Minnesota, MapServer is released under an MIT-style license, and runs on all major platforms (Windows, Linux, Mac OS X). 
 See https://github.com/mapserver/mapserver 
 
-## Building mapserver
+## Building 
 
 Running this will build a docker image with mapserver 7
 
@@ -20,13 +20,13 @@ Running this will build a docker image with mapserver 7
     cd mapserver
     docker build -t mapserver .
 
-## Running mwkorver/mapserver
+## Running 
 
 This image exposes two ports 22 for ssh and 8080 for Nginx
 
     docker run -d -p 80:8080 -v /usr/local/mapserver:/maps --name mapserver mapserver
 
-## Test it
+## Testing
 
 wget -qO- h http://HOST_IP/wms
 
