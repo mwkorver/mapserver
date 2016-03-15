@@ -9,7 +9,7 @@ https://gist.github.com/mwkorver/1ef45abac3871360f2b1
 
 ## UMN Mapserver
 
-MapServer is an Open Source platform for publishing spatial data and interactive mapping applications to the web. Originally developed in the mid-1990’s at the University of Minnesota, MapServer is released under an MIT-style license, and runs on all major platforms (Windows, Linux, Mac OS X). MapServer is not a full-featured GIS system, nor does it aspire to be.
+MapServer is an Open Source platform for publishing spatial data and interactive mapping applications to the web. Originally developed in the mid-1990’s at the University of Minnesota, MapServer is released under an MIT-style license, and runs on all major platforms (Windows, Linux, Mac OS X). 
 See https://github.com/mapserver/mapserver 
 
 ## Building mapserver
