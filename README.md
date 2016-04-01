@@ -1,5 +1,3 @@
-# MapServer
-
 This is UMN MapServer (http://www.mapserver.org/) using Nginx setup with FastCGI as a Docker image.
 The goal of this project is to simplify the instantiation of a WMS service able to serve a large collection of orthoimagery. 
 This repo is based on srounet/docker-mapserver. I have swapped out Apache with Nginx, and taken out PHP. You could use the same general pattern to serve WFS by running this container on top of a number of PostgreSQL read-replicas running on Amazon RDS.
@@ -10,7 +8,7 @@ https://gist.github.com/mwkorver/1ef45abac3871360f2b1
 ## UMN Mapserver
 
 MapServer is an Open Source platform for publishing spatial data and interactive mapping applications to the web. Originally developed in the mid-1990’s at the University of Minnesota, MapServer is released under an MIT-style license, and runs on all major platforms (Windows, Linux, Mac OS X). 
-See https://github.com/mapserver/mapserver 
+See http://www.mapserver.org/
 
 ## Building 
 
